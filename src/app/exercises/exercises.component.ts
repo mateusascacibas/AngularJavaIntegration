@@ -1,19 +1,18 @@
-
-import { environment } from './../environments/environment';
-import { Component, Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { throwError } from 'rxjs';
-
+import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-exercises',
+  templateUrl: './exercises.component.html',
+  styleUrls: ['./exercises.component.css']
 })
-@Injectable()
-export class AppComponent {
-  constructor(private http: HttpClient) {}
-
+export class ExercisesComponent implements OnInit {
+  result: String | undefined;
+  constructor(private http: HttpClient) { 
+  }
+  
   getExe1(){
     const endPoint = environment.httpApi + "conditional/exe1?num=1";
     const headers = new HttpHeaders({
@@ -23,16 +22,15 @@ export class AppComponent {
       'Access-Control-Allow-Headers': '*',
     });
 
-    return this.http.get(endPoint, {
+     return this.http.get(endPoint, {
       headers,
       withCredentials: environment.withApiV2Credentials,
       responseType: 'text'
     })
-    .toPromise().then(() => {}).catch((err) => {
-      const error = throwError(err);
-      error.subscribe();
-    });
+    .subscribe(dados => this.result = dados);
   
   }
-  title = 'projectIntegration';
+  ngOnInit(): void {
+  }
+
 }

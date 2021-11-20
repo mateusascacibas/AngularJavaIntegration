@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  httpApi: `http://localhost:8080/`
+  httpApi: `http://localhost:8080/`,
+  withApiV2Credentials: false
 };
 
 /*

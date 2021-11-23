@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { CategoryComponent } from './category/category.component';
+import { ServicesService } from './services.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExercisesComponent,
     PrincipalComponent,
-    CategoryComponent
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,25 +8,33 @@ import { Component, OnInit } from '@angular/core';
 export class CategoryComponent implements OnInit {
   categories: any[] = [
     {
-      "name": "Class"
+      "name": "Class",
+      "exercise": ["1","2","3"],     
+
     },
     {
-      "name": "Collection"
+      "name": "Collection",
+      "exercise": ["1","2","3"],    
     },
     {
-      "name": "Conditional"
+      "name": "Conditional",
+      "exercise": ["1","2","3"],    
     },
     {
-      "name": "Heritage"
+      "name": "Heritage",
+      "exercise": ["1","2","3"],    
     },
     {
-      "name": "Loop"
+      "name": "Loop",
+      "exercise": ["1","2","3"],    
     },
     {
-      "name": "Sequential"
+      "name": "Sequential",
+      "exercise": ["1","2","3"],    
     },
     {
-      "name": "Vector and Matrix"
+      "name": "Vector and Matrix",
+      "exercise": ["1","2","3"],    
     },
   ];
   constructor() { 

@@ -1,2 +1,15 @@
-<button (click)="getExe1()">Get Exe 1</button>
-<p>Resultado: {{result}}</p>
+<div *ngFor='let exercise of exercises;' class="card" style="text-align: center">
+  <div class="card w-100">
+    <div class="card-body">
+      <!-- <h2>Category: {{exercise.category}}</h2> -->
+      <h5 class="card-title">{{exercise.description}}</h5>
+      <button class="btn btn-outline-dark btn-sm"
+        (click)="exercisesRun(exercise.category, exercise.number)">{{exercise.exe}}</button>
+    </div>
+  </div>
+  <hr>
+</div>
+
+
+<!-- <button (click)="conditionalExe1()">Get Exe 1</button>
+<p>Resultado: {{result}}</p> -->

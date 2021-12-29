@@ -1,10 +1,31 @@
 <div *ngFor='let exercise of exercises;' class="card" style="text-align: center">
   <div class="card w-100">
     <div class="card-body">
-      <!-- <h2>Category: {{exercise.category}}</h2> -->
+      <h2 *ngIf='exercise.first'>Category: {{exercise.categoryDescription}}</h2>
+      <hr *ngIf='exercise.first'>
       <h5 class="card-title">{{exercise.description}}</h5>
-      <button class="btn btn-outline-dark btn-sm"
-        (click)="exercisesRun(exercise.category, exercise.number)">{{exercise.exe}}</button>
+      <button type="button" class="btn btn-info btn-sm" (click)="exercisesRun(exercise.category, exercise.number)"
+        data-bs-toggle="modal" data-bs-target="#exampleModal">
+        {{exercise.exe}}
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Result exercise</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              {{result}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <hr>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  httpApi: `https://apijavaexercises.netlify.app/`,
+  httpApi: `https://localhost:8080`,
   withApiV2Credentials: false
 };
 
